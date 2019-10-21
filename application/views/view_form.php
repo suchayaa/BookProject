@@ -155,7 +155,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 						</tr>
 					</thead>
 
-					<tbody> <!--------วนลูปเพื่อแสดงข้อมูล-----$items มาจาก Welcame.php----->
+					<tbody> <!--------วนลูปเพื่อแสดงข้อมูล-----$items มาจาก manage_book.php----->
 						<?php foreach($items as $row) : ?> 
 							<tr>
 								<td><?= $row->id?></td>

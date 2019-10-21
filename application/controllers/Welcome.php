@@ -20,6 +20,8 @@ public function __construct(){
 		echo get_cookie('username');
 	}
 
+	
+
 	public function showsession(){
 		$member_id = $this->session->userdata("member_id");
 		echo $member_id;

@@ -2,12 +2,22 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Book_model extends CI_Model {
-   private $table ='books';
+    function __construct(){
+        parent::__construct();
+        $this->load->database();
+    }
 
-        public function __construct()
-        {
-            $this->load->database();
-        }
+    public function get_items()
+    {
+        
+        return $this->db->get('books')->result(); 
+        ////$this->$table ต้องเป็นชื่อตาราง แต่เนื่องจากเราสร้างตัวแปล $table เก็บค่าแล้ว จากนั้นใส่ result เพื่อแสดงค่าทั้งหมด
+    }
+
+    public function create_item($value){
+        $this->db->insert('books', $value);
+    }
+
 
 	public function book_insert($b_name,$b_author,$b_year,$type_id,$b_amount,$b_price)
 	{
@@ -18,17 +28,6 @@ class Book_model extends CI_Model {
 	{
 		$this->db->query("insert into type (type_name) values ('$type_name')");
     }
-//////////////////////////////////แสดงผล//////////////////
-    public function get_items()
-    {
-        
-        return $this->db->get('books')->result(); 
-        ////('') ต้องเป็นชื่อตาราง จากนั้นใส่ result เพื่อแสดงค่าทั้งหมด
-    }
-
-    public function create_item($value){
-        $this->db->insert('books', $value);
-    }
     
-    
+   
 }
