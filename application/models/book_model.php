@@ -29,5 +29,13 @@ class Book_model extends CI_Model {
 		$this->db->query("insert into type (type_name) values ('$type_name')");
     }
     
+
+    public function delete_id($id)
+    {
+        $this->db->where('id', $id);
+        $this->db->delete('books');  //ชื่อตาราง
+    }	
+
+    
    
 }

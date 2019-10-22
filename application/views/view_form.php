@@ -22,7 +22,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		<div class="card">
 			<h4 class="card-header">เพิ่ม/ลบ/แก้ไข ข้อมูลหนังสือ CodeIgniter</h4>
       <br>
-<center><form  action=".manage_book/data_submit" method="POST" enctype="multipart/form-data" name="form1">
+<center><form  action="./data_submit" method="POST" enctype="multipart/form-data" name="form1">
   <h1 align="center">เพิ่มข้อมูลหนังสือ| <a href="search.php">ค้นหาหนังสือ</a></di>
   </h1>
 	  
@@ -66,7 +66,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 </center>
 <!----------------------------------------------1--------------------------------------------------------->
 <center>
-<table action=".manage_book/data_type_submit" width="272" border="2" cellspacing="0" cellpadding="2">
+<table action="./data_type_submit" width="272" border="2" cellspacing="0" cellpadding="2">
       <tr>
         <td colspan="2">เพิ่มประเภทหนังสือ</td>
         </tr>
@@ -101,7 +101,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
      
     </table>
 </center>
-			<form method="post" class="card-body">
+			<form method="post" action="./save_item" class="card-body">
 				<table class="table">
 					<thead>
 						<tr class="no-border">
@@ -171,7 +171,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 											<a href="" class="btn btn-warning btn-black btn-sm">
 											แก้ไข  <!-------a.btn.btn-warning.btn-black.btn-sm  ทำปุ่ม------------->
 											</a> </div>
-										<a href="" class="btn btn-danger btn-black btn-sm">
+										<a href="./fordelete?bookid=<?=$row->id?>" class="btn btn-danger btn-black btn-sm">
 											ลบ <!-------a.btn.btn-warning.btn-black.btn-sm  ทำปุ่ม------------->
 										</a>
 										

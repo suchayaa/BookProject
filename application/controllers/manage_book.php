@@ -16,21 +16,27 @@ class Manage_book extends CI_Controller {
 
         public function show()
 	{
-		$this->load->model('book_model'); //มาจาก book_model.php
-		$this->save_item();
-		$this->load->view('view_form', [ ////แสดงผลเป็น array ก่อน
-			'items' => $this->books_model->get_items()
-		]);
+		// $this->load->model('book_model'); //มาจาก book_model.php
+		//$this->save_item();
+		// $this->load->view('view_form', [ ////แสดงผลเป็น array ก่อน
+		// 	'items' => $this->books_model->get_items()
+                // ]);
+                $data['items'] = $this->book_model->get_items();
+                $this->load->view('view_form',$data);
 	}
 
-	private function save_item()
-	{
-		$input = $this->input->post();
-		if(!empty($input)){
-			$this->books_model->create_item($input);
+	// private function save_item()
+	// {
+	// 	$input = $this->input->post();
+	// 	if(!empty($input)){
+	// 		$this->book_model->create_item($input);
 
-			redirect(base_url('/'));
-		}
+	// 		redirect(base_url('/'));
+	// 	}
+        // }
+        
+        public function fordelete(){
+                $this->book_model->delete_id($id);
 	}
     
     public function data_submit()
