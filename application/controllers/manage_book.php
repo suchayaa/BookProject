@@ -23,6 +23,15 @@ class Manage_book extends CI_Controller {
                 // ]);
                 $data['items'] = $this->book_model->get_items();
                 $this->load->view('view_form',$data);
+
+                $data2['items2'] = $this->book_model->get_items2();
+                $this->load->view('view_form',$data2);
+        }
+        
+        public function show2()
+	{
+                $data2['items2'] = $this->book_model->get_items2();
+                $this->load->view('view_form',$data2);
 	}
 
 	// private function save_item()
@@ -36,7 +45,10 @@ class Manage_book extends CI_Controller {
         // }
         
         public function fordelete(){
+                
+                $id=$this->input->get('bookid');
                 $this->book_model->delete_id($id);
+                $this->load->view('manage_book/show');
 	}
     
     public function data_submit()

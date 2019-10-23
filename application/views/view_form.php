@@ -38,7 +38,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
           </tr>
           <tr>
             <th scope="row">ปีที่พิมพ์:</th>
-            <td><input type="text" name="bYear" id="bYear"></td>
+            <td><input type="number" name="bYear" id="bYear"></td>
           </tr>
           <tr>
             <th scope="row">ประเภทหนังสือ :</th>
@@ -50,11 +50,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
           </tr>
           <tr>
             <th scope="row">จำนวน :</th>
-            <td><input type="text" name="bAmount" id="bAmount"></td>
+            <td><input type="number" name="bAmount" id="bAmount"></td>
           </tr>
           <tr>
             <th scope="row">ราคา :</th>
-            <td><input type="text" name="bPrice" id="bPrice"></td>
+            <td><input type="number" name="bPrice" id="bPrice"></td>
           </tr>
 
         </tbody>
@@ -84,65 +84,32 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <br><br>
 <!------------------------------------------------2------------------------------------------------------->
 <center>
-<table width="346" border="2" cellspacing="0" cellpadding="2">
-      <tr>
-        <td>รหัส</td>
-        <td>ประเภทหนังสือ</td>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
-      </tr>
-     
-      <tr>
-        <td></td>
-        <td></td>
-        <td>แก้ไข</td>
-        <td>ลบ</td>
-      </tr>
-     
-    </table>
+<form method="post" action="./save_item" class="card-body">
+				<table ction="./data_type_submit" width="272" border="2" cellspacing="0" cellpadding="2">
+					<thead>
+						
+						<tr>
+							<th colspan="2" width="70px">รหัส</th>
+							<th >ประเภทหนังสือ</th>
+						</tr>
+					</thead>
+
+					<tbody> <!--------วนลูปเพื่อแสดงข้อมูล-----$items มาจาก manage_book.php----->
+						<?php foreach($items2 as $row) : ?> 
+							<tr>
+								<td colspan="2"><?= $row->type_id?></td>
+								<td><?= $row->type_name?></td>
+							</tr>
+						<?php endforeach; ?>
+					</tbody>
+				</table>
+			</form>
+	<br>
 </center>
+<!------------------------------------------------3------------------------------------------------------->
 			<form method="post" action="./save_item" class="card-body">
 				<table class="table">
 					<thead>
-						<tr class="no-border">
-							<td>
-								<input type="text" name="id" readonly class="form-control">
-							</td>
-							<td width="120">
-								<input type="text" name="b_name" class="form-control">
-							</td>
-							<td width="120">
-								<input type="text" name="b_author" class="form-control">
-							</td>
-							<td width="120">
-								<input type="text" name="b_year" class="form-control">
-							</td>
-							<td width="120">
-								<input type="text" name="b_amount" class="form-control">
-							</td>
-							<td width="130">
-								<input type="text" name="type_id" class="form-control">
-							</td>
-						
-							<td width="120"> 
-								<input type="text" name="b_price" class="form-control">
-							</td>
-
-							
-							
-							<td>
-									<div class="row">
-										<div class="col">
-											<button type="submit" class="btn btn-warning btn-black btn-sm">
-											บันทึก  <!-------a.btn.btn-warning.btn-black.btn-sm  ทำปุ่ม------------->
-											</button> </div>
-										<a href="" class="btn btn-danger btn-black btn-sm">
-											ยกเลิก <!-------a.btn.btn-warning.btn-black.btn-sm  ทำปุ่ม------------->
-											</a>
-										
-									</div>
-								</td>
-						</tr>
 						<tr>
 							<th width="70px">รหัส</th>
 							<th>ชื่อหนังสือ</th>
