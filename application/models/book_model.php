@@ -16,12 +16,12 @@ class Book_model extends CI_Model {
         ////$this->$table ต้องเป็นชื่อตาราง แต่เนื่องจากเราสร้างตัวแปล $table เก็บค่าแล้ว จากนั้นใส่ result เพื่อแสดงค่าทั้งหมด
     }
 
-    public function get_items2()
-    {
+    // public function get_items2()
+    // {
         
-        return $this->db->get('type')->result(); 
-        ////$this->$table ต้องเป็นชื่อตาราง แต่เนื่องจากเราสร้างตัวแปล $table เก็บค่าแล้ว จากนั้นใส่ result เพื่อแสดงค่าทั้งหมด
-    }
+    //     return $this->db->get('type')->result(); 
+    //     ////$this->$table ต้องเป็นชื่อตาราง แต่เนื่องจากเราสร้างตัวแปล $table เก็บค่าแล้ว จากนั้นใส่ result เพื่อแสดงค่าทั้งหมด
+    // }
 
     public function create_item($value){
         $this->db->insert('books', $value);

@@ -87,27 +87,44 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <form method="post" action="./save_item" class="card-body">
 				<table ction="./data_type_submit" width="272" border="2" cellspacing="0" cellpadding="2">
 					<thead>
-						
 						<tr>
-							<th colspan="2" width="70px">รหัส</th>
+							<th colspan="2" width="50px">รหัส</th>
 							<th >ประเภทหนังสือ</th>
 						</tr>
 					</thead>
 
-					<tbody> <!--------วนลูปเพื่อแสดงข้อมูล-----$items มาจาก manage_book.php----->
-						<?php foreach($items2 as $row) : ?> 
+					<thead>
+						<tr>
+							<td colspan="2" width="50px" >1</td>
+							<td>Knowledge Book</td>
+							
+						</tr>
+						<tr>
+							<td colspan="2" width="50px">2</td>
+							<td>Fiction Book</td>
+							
+						</tr>
+						<tr>
+							<td colspan="2" width="50px">3</td>
+							<td>For children</td>
+							
+						</tr>
+					</thead>
+
+					<!-- <tbody> <!--------วนลูปเพื่อแสดงข้อมูล-----$items มาจาก manage_book.php----->
+						<!-- <?php foreach($items2 as $row) : ?> 
 							<tr>
 								<td colspan="2"><?= $row->type_id?></td>
 								<td><?= $row->type_name?></td>
 							</tr>
 						<?php endforeach; ?>
-					</tbody>
+					</tbody> -->
 				</table>
 			</form>
 	<br>
 </center>
 <!------------------------------------------------3------------------------------------------------------->
-			<form method="post" action="./save_item" class="card-body">
+			<form method="post" action="./show" class="card-body">
 				<table class="table">
 					<thead>
 						<tr>
