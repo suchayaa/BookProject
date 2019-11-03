@@ -47,7 +47,7 @@ class Manage_book extends CI_Controller {
                 
                 $id=$this->input->get('bookid');
                 $this->book_model->delete_id($id);
-                $this->load->view('manage_book/show');
+                $this->load->view('./manage_book/show');
 	}
     
     public function data_submit()
